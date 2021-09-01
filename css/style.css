@@ -1,0 +1,244 @@
+@charset "UTF-8";
+/* Reseteo de padding y margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+    background-image: url("../images/fondo.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+.nav-link {
+    color: whitesmoke;
+}
+
+.nav-link:hover {
+  color: gold;
+}
+
+
+
+#nombreUsuario {
+  font-size: 10px;
+  color: rgb(206, 206, 206);
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+}
+
+
+.galeria-fotos {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  border-radius: 10px;
+}
+@media (max-width: 991px) {
+  .galeria-fotos {
+    width: 90%;
+  }
+}
+
+.carousel-inner img {
+  border-radius: 20px;
+}
+
+.container {
+  color: black;
+}
+
+.texto_mensaje {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mensaje_incorrecto {
+  color: red;
+}
+
+.mensaje_correcto {
+  color: rgb(64, 223, 64);
+
+}
+
+.textoLogin {
+  padding: 30px;
+  color: whitesmoke;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#linkAPagina {
+  display: flex;
+  justify-content: center;
+  color: gold;
+}
+
+#linkAPagina.link {
+  color: gold;
+}
+
+.btn {
+  margin: 20px;
+}
+
+/* .cardsGuitarras {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+} */
+
+/* .card {
+  margin: 10px;
+} */
+
+.itemCartTotal {
+  color: black;
+}
+
+
+.description{
+  height: 25px;
+  overflow: hidden;
+  transition: height .3s ease-in .3s;
+}
+.description:hover{
+  height: 80px;
+}
+.carrito{
+  min-height: 80vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+.table__productos{
+  display: flex;
+}
+.table__productos > img{
+  width: 9rem;
+  object-fit: contain;
+  border-radius: 6px;
+  margin-right: 20px;
+}
+.table__cantidad > input{
+  width: 40px;
+  border: none;
+  outline: 0;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+.hide, .remove{
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .row-cols-xl-4>* {
+    flex: 0 0 auto;
+    width: 25%;
+}
+}
+
+.navDeCarrito {
+  z-index: 5 !important;
+}
+
+.title {
+  margin: 10px !important;
+}
+
+.tituloFadeIn {
+  color: whitesmoke !important;
+}
+
+.btn-primary {
+  color: black !important;
+  background-color: gold !important;
+  border-color: rgb(189, 161, 4) !important;
+}
+
+.btn-primary:hover {
+  color: gold !important;
+  background-color: black !important;
+  border-color: rgb(56, 56, 56) !important;
+}
+
+
+.btn-primary:active {
+  color: gold !important;
+  background-color: black !important;
+  border-color: rgb(56, 56, 56) !important;
+}
+
+.stylePrecio {
+  color: gold !important;
+  background-color: rgb(66, 66, 66) !important;
+  padding: 5px;
+  border: 2px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: black;
+  background-color: gold;
+
+}
+
+
+.btn-success {
+  color: black  !important;
+  font-weight: bold  !important;
+  background-color: gold  !important;
+  border-color: yellow  !important;
+}
+
+.btn-success:hover {
+  color: gold  !important;
+  font-weight: bold  !important;
+  background-color: black  !important;
+  border-color:  rgb(56, 56, 56) !important;
+}
+
+.btn-primary:active {
+  color: gold !important;
+  background-color: black !important;
+  border-color: rgb(56, 56, 56) !important;
+}
+
+.precioEnCarritoStyle {
+  margin: 10px !important;
+}
+
+.marginParaForm {
+  margin: 10px;
+}
+
+.entradaAPAgina {
+  color: gold;
+}
+
+.entradaAPAgina:hover {
+  color: whitesmoke;
+}
+
+.linkComprar {
+  color: whitesmoke !important;
+  text-decoration: none !important;
+}
+
+.linkComprar:hover {
+  color: gold !important;
+}
+
+.cerrar > a {
+  color: whitesmoke !important;
+}
