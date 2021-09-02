@@ -355,7 +355,7 @@ $(".contenedorTitulo").prepend(
   
   `<h2 class="h4 m-4 text-primary tituloFadeIn">Productos</h2>
   <div class="d-flex flex-wrap justify-content-center">
-  <h5 class="tituloFadeIn">Filtras por Marcas</h5>
+  <h5 class="tituloFadeIn">Filtros por Marcas</h5>
 </div>
 
 <div class="d-flex flex-wrap justify-content-center">
@@ -615,7 +615,7 @@ $(".cartelCompra").click((event) => {
         </div>
         <div class="modal-footer">
 
-        <button type="button" class="btn btn-primary detalleCompra" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <button type="button" class="btn btn-primary" id="detalleCompra" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Ver Detalle de Compra
 </button>
             <button type="button" class="btn btn-secondary cerrar" data-dismiss="modal"><a href="productos.html" class="cerrar">Cerrar</a></button>
@@ -653,6 +653,28 @@ $(".cerrar").click(() => {
 
 
 
+$("#detalleCompra").click(() => {
+
+  const guitarrasCompradas = JSON.parse(localStorage.getItem("compras"));
+  carrito = guitarrasCompradas
+
+
+  $("#cartelDetalleCompra").append(
+    
+    
+
+    
+    `
+    <p>QUE ONDA GENTE</p>
+    <h3>HOLA PIBE</h3>
+    <h3>${guitarra.marca}</h3>
+    <h3>${guitarra.modelo}</h3>
+    <h3>${guitarra.anio}</h3>
+
+    `
+  );
+ }
+);
 
 
 
