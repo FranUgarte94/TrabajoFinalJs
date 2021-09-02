@@ -79,12 +79,15 @@ body {
 #linkAPagina {
   display: flex;
   justify-content: center;
-  color: gold;
+  font-size: 20px;
 }
 
-#linkAPagina.link {
-  color: gold;
+
+#linkAPagina > a {
+  color: gold !important;
+
 }
+
 
 .btn {
   margin: 20px;

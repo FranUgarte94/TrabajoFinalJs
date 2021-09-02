@@ -44,6 +44,8 @@ function validarCredenciales() {
     } else {
 
     if((username.value == "UsuarioUno") && (password.value == "1234")) {
+
+        $("#linkAPagina").empty();
         mensaje.innerText = "Credenciales correctas";
         mensaje.className = "mensaje_correcto";
         username.classList.add("is-valid");
@@ -52,8 +54,12 @@ function validarCredenciales() {
                     
                     const divParrafo = document.getElementById("linkAPagina")
                     let parrafo = document.createElement("p");
+
+
+
+
                     
-                    parrafo.innerHTML = `<a href="index.html" class="entradaAPAgina"><h2>Entrar al sitio</h2></a>`; 
+                    parrafo.innerHTML = `<a href="index.html">Entrar al sitio</a>`; 
                     
                     divParrafo.appendChild(parrafo);
 
