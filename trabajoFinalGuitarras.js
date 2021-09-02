@@ -614,7 +614,10 @@ $(".cartelCompra").click((event) => {
             <p class="modal-description">Tu pago y metodo de envio será confirmado por mail.</p>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Ver Detalle de Compra</button>
+
+        <button type="button" class="btn btn-primary detalleCompra" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Ver Detalle de Compra
+</button>
             <button type="button" class="btn btn-secondary cerrar" data-dismiss="modal"><a href="productos.html" class="cerrar">Cerrar</a></button>
         </div>
     </div>
