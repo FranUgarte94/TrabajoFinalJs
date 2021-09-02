@@ -584,6 +584,12 @@ function addLocalStorage(){
 
 $(".cartelCompra").click((event) => {
 
+  localStorage.setItem("compra", JSON.stringify(carrito));
+
+
+
+  $(".cartelCompra").addClass("d-none");
+
   if(document.querySelector(".tbody").textContent == "") {
 
   } else {
@@ -624,11 +630,15 @@ $(".cartelCompra").click((event) => {
   
 $(".cerrar").click(() => {
 
+  $(".cartelCompra").removeClass("d-none");
+
+
+
   $(".itemCartTotal").empty(
     ``
 );
 
-  $(".modal-dialog").empty(
+  $(".modal-content").empty(
     ``
 );
 
