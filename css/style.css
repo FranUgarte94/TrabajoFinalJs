@@ -249,3 +249,38 @@ body {
 .login {
   color: black;
 }
+
+
+/* Footer Redes */
+
+.redes {
+  display: block;
+  padding: 50px;
+  height: 100px;
+  text-align: center;
+  color: whitesmoke;
+
+}
+
+
+/* Pie de Pagina */
+
+#pieDePagina {
+  position: fixed;
+  bottom: 0;
+  font-family: 'Raleway', sans-serif;
+  padding: 1em;
+
+}
+
+.imagenLogin {
+
+  margin: 10px;
+  width: 20%;
+
+}
+
+.divImagenLogin {
+  display: flex;
+  justify-content: center;
+}
