@@ -472,6 +472,7 @@ function agregarItemACarrito(nuevoItem){
 
 // Mostrar visualmente en el carrito la guitarra añadida
 function verItemsEnCarrito(){
+
   tbody.innerHTML = '';
   carrito.map(item => {
     const tr = document.createElement("tr");
@@ -559,12 +560,12 @@ function sumarCantidades(e){
 const storage = JSON.parse(localStorage.getItem("carrito"));
 if(storage){
   carrito = storage;
-  verItemsEnCarrito()
-}
+  verItemsEnCarrito();
+};
 
 function addLocalStorage(){
   localStorage.setItem("carrito", JSON.stringify(carrito));
-}
+};
 
 
 
@@ -582,6 +583,10 @@ function addLocalStorage(){
 
 
 $(".cartelCompra").click((event) => {
+
+  if(document.querySelector(".tbody").textContent == "") {
+
+  } else {
 
   const elementoTitulo = $(event.target).parent().children()[0];
   const elementoDescripcion = $(event.target).parent().children()[1];
@@ -619,11 +624,10 @@ $(".cerrar").click(() => {
 );;
   $("#modal").fadeOut(1000);
 
+}
 
-  
-});
-});
-
+);
+}});
 
 
 

@@ -242,3 +242,7 @@ body {
 .cerrar > a {
   color: whitesmoke !important;
 }
+
+.login {
+  color: black;
+}
