@@ -609,19 +609,32 @@ $(".cartelCompra").click((event) => {
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-primary">Ver Detalle de Compra</button>
-            <button type="button" class="btn btn-secondary cerrar" data-dismiss="modal"><a href="productos.html">Cerrar</a></button>
+            <button type="button" class="btn btn-secondary cerrar" data-dismiss="modal"><a href="productos.html" class="cerrar">Cerrar</a></button>
         </div>
     </div>
   </div>
 `
   );
 
+
+
+
+
+
   
 $(".cerrar").click(() => {
 
+  $(".itemCartTotal").empty(
+    ``
+);
+
+  $(".modal-dialog").empty(
+    ``
+);
+
   $(".tbody").empty(
     ``
-);;
+);
   $("#modal").fadeOut(1000);
 
 }
