@@ -355,7 +355,7 @@ $(".contenedorTitulo").prepend(
   
   `<h2 class="h4 m-4 text-primary tituloFadeIn">Productos</h2>
   <div class="d-flex flex-wrap justify-content-center">
-  <h5 class="tituloFadeIn">Filtras por Marcas</h5>
+  <h5 class="tituloFadeIn">Filtros por Marcas</h5>
 </div>
 
 <div class="d-flex flex-wrap justify-content-center">
@@ -618,6 +618,7 @@ $(".cartelCompra").click((event) => {
         <button type="button" class="btn btn-primary detalleCompra" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Ver Detalle de Compra
 </button>
+
             <button type="button" class="btn btn-secondary cerrar" data-dismiss="modal"><a href="productos.html" class="cerrar">Cerrar</a></button>
         </div>
     </div>
@@ -625,35 +626,24 @@ $(".cartelCompra").click((event) => {
 `
   );
 
-
-
-
-
-
-  
 $(".cerrar").click(() => {
 
   $(".cartelCompra").removeClass("d-none");
 
+  $(".itemCartTotal").empty(``);
 
+  $(".modal-content").empty(``);
 
-  $(".itemCartTotal").empty(
-    ``
-);
+  $(".tbody").empty(``);
 
-  $(".modal-content").empty(
-    ``
-);
-
-  $(".tbody").empty(
-    ``
-);
   $("#modal").fadeOut(1000);
 
 }
 
 );
-}});
+}
+}
+);
 
 
 
