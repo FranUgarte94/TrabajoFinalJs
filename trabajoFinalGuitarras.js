@@ -615,7 +615,22 @@ $(".cartelCompra").click((event) => {
         </div>
         <div class="modal-footer">
 
-        <button type="button" class="btn btn-primary" id="detalleCompra" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <button type="button" class="btn btn-primary" id="verDetalleCompra" 
+        
+        
+        
+
+
+      data-bs-toggle="pill"
+      data-bs-target="#pills-home"
+
+      role="tab"
+      aria-controls="pills-home"
+      aria-selected="true"
+      
+      
+      
+      >
         Ver Detalle de Compra
 </button>
             <button type="button" class="btn btn-secondary cerrar" data-dismiss="modal"><a href="productos.html" class="cerrar">Cerrar</a></button>
@@ -625,9 +640,30 @@ $(".cartelCompra").click((event) => {
 `
   );
 
+  $(".agregarSeccionCompra").append(
+
+    `
+    <li class="nav-item text-primary" role="presentation">
+    <a
+      class="nav-link sectionDetalle"
+      id="pills-home-tab"
+      data-bs-toggle="pill"
+      data-bs-target="#pills-home"
+      type="button"
+      role="tab"
+      aria-controls="pills-home"
+      aria-selected="true"
+      >Detalle de Compra</a
+    >
+  </li>
+`
+
+  );
+
 
 
 $(".cerrar").click(() => {
+
 
   $(".cartelCompra").removeClass("d-none");
 
@@ -653,31 +689,94 @@ $(".cerrar").click(() => {
 
 
 
-$("#detalleCompra").click(() => {
-
-  const guitarrasCompradas = JSON.parse(localStorage.getItem("compras"));
-  carrito = guitarrasCompradas
 
 
-  $("#cartelDetalleCompra").append(
-    
-    
 
-    
-    `
-    <p>QUE ONDA GENTE</p>
-    <h3>HOLA PIBE</h3>
-    <h3>${guitarra.marca}</h3>
-    <h3>${guitarra.modelo}</h3>
-    <h3>${guitarra.anio}</h3>
 
-    `
-  );
- }
+function verDetalleDeCompra() {
+
+$("#detComp").empty(
+``
 );
 
 
 
-// FALTA MODIFICAR EL STOCK UNA VEZ COMPRADAS LAS GUITARRAS
+for (const guitarraComprada of storage) {
+$("#detComp").append(`
+
+<div class="card" style="width: 18rem;">
+  <img src="${guitarraComprada.img}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${guitarraComprada.modelo}</h5>
+    <p class="card-text">${guitarraComprada.title}</p>
+    <p class="card-text">${guitarraComprada.cantidad}</p>
+    <p class="card-text">${guitarraComprada.precio}</p>
+
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+
+`)
+}
+}
+
+function verTotalEnDetalleDeCompra() {
+
+  let totalCompra = $(".itemCartTotal").text()
+  console.log(totalCompra)
+
+
+  $("#totalDetCompra").empty(
+  ``
+  );
+  
+  
+  $("#totalDetCompra").append(`
+  
+  <p>${totalCompra}</p>
+  
+  
+  `)
+  }
+
+
+
+
+
+$(".cartelCompra").click(() => { 
+
+  verDetalleDeCompra();
+  verTotalEnDetalleDeCompra();
+  
+  });
+
+
+
+
+
+  
+
+function activarODesactivarSecciones() {
+  
+  $("sectionCarrito").removeClass(".active");
+  $("sectionDetalle").addClass(".active");
+
+}
+
+
+
+
+
+$("#verDetalleCompra").click(() => { 
+
+
+  activarODesactivarSecciones();
+    
+}); 
+
+
+
+
 
 
