@@ -580,7 +580,7 @@ function addLocalStorage(){
 
   $(".cartelCompra").click((event) => {
 
-    localStorage.setItem("compra", JSON.stringify(carrito));
+    localStorage.setItem("compra", JSON.stringify(storage));
   
   
   
@@ -653,7 +653,38 @@ function addLocalStorage(){
   
 
 
+  $(".verDetalleCompra").click(() => { 
 
+
+    console.log("JAJAJJA");
+    
+    
+    $(".sectionCarrito").attr({  
+      'aria-selected':"false",
+      'class':"nav-link sectionCarrito"
+    });
+    
+    $(".sectionDetalle").attr({  
+      'aria-selected':"true",
+      'class':"nav-link sectionDetalle active"
+    });
+    
+    $(".carrito").attr({
+      'class':"tab-pane fade carrito",
+    });
+    
+    $(".detalle").attr({
+      'class':"tab-pane fade detalle active show",
+    });
+    
+    
+
+    
+
+
+
+          
+      }); 
 
 
 
@@ -734,33 +765,7 @@ $(".cartelCompra").click(() => {
 
 
 
-  $(".verDetalleCompra").click(() => { 
 
-
-console.log("JAJAJJA");
-
-
-$(".sectionCarrito").attr({  
-  'aria-selected':"false",
-  'class':"nav-link sectionCarrito"
-});
-
-$(".sectionDetalle").attr({  
-  'aria-selected':"true",
-  'class':"nav-link sectionDetalle active"
-});
-
-$(".carrito").attr({
-  'class':"tab-pane fade carrito",
-});
-
-$(".detalle").attr({
-  'class':"tab-pane fade detalle active show",
-});
-
-
-      
-  }); 
 
 
 
