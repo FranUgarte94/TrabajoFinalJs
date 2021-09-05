@@ -580,7 +580,7 @@ function addLocalStorage(){
 
   $(".cartelCompra").click((event) => {
 
-    localStorage.setItem("compra", JSON.stringify(storage));
+    localStorage.setItem("compra", JSON.stringify(carrito));
   
   
   
@@ -618,12 +618,7 @@ function addLocalStorage(){
     </div>
   `
     );
-  
 
-
-
-  
-  
   
   $(".cerrar").click(() => {
   
@@ -652,11 +647,9 @@ function addLocalStorage(){
 
   
 
-
+// Activo seccion de Detalle de compra cuando se apreta boton Ver detalle de compra
   $(".verDetalleCompra").click(() => { 
 
-
-    console.log("JAJAJJA");
     
     
     $(".sectionCarrito").attr({  
@@ -677,12 +670,6 @@ function addLocalStorage(){
       'class':"tab-pane fade detalle active show",
     });
     
-    
-
-    
-
-
-
           
       }); 
 
@@ -691,7 +678,7 @@ function addLocalStorage(){
 
 
 
-
+// LLeno la seccion de detalle de compra con la compra realizada
 
 function verDetalleDeCompra() {
 
@@ -725,6 +712,7 @@ $("#detComp").append(`
 }
 }
 
+// Ver total e informacion de la compra en el Detalle de compra
 function verTotalEnDetalleDeCompra() {
 
   let totalCompra = $(".itemCartTotal").text()
@@ -749,9 +737,6 @@ function verTotalEnDetalleDeCompra() {
   
   `)
   }
-
-
-
 
 
 $(".cartelCompra").click(() => { 
