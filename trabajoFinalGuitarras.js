@@ -706,7 +706,7 @@ $(".verDetalleCompra").attr({
 
 
 
-for (const guitarraComprada of storage) {
+for (const guitarraComprada of carrito) {
 $("#detComp").append(`
 
 <div class="card" style="width: 18rem;">
