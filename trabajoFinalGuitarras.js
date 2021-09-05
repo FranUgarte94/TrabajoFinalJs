@@ -2,6 +2,8 @@ $(document).ready(() => {
 
   console.log("Se ha cargado el DOM correctamente")
 
+
+
 });
 
 
@@ -573,119 +575,86 @@ function addLocalStorage(){
 
 
 
+  // Agrego un cartel luego de efectuar la compra 
 
+
+  $(".cartelCompra").click((event) => {
+
+    localStorage.setItem("compra", JSON.stringify(carrito));
+  
+  
+  
+    $(".cartelCompra").addClass("d-none");
+  
+    if(document.querySelector(".tbody").textContent == "") {
+  
+    } else {
+  
+    const elementoTitulo = $(event.target).parent().children()[0];
+    const elementoDescripcion = $(event.target).parent().children()[1];
+    $(".modal-title").text(elementoTitulo.textContent);
+    $(".modal-description").text(elementoDescripcion.textContent);
+    $("#modal").fadeIn(2000);
+  
+    $("#modal").append(
+      `
+      <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">¡Gracias por tu compra!</h5>
+              <button type="button" class="close cerrar" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <p class="modal-description">Tu pago y metodo de envio será confirmado por mail.</p>
+          </div>
+          <div class="modal-footer">
+  
+
+              <button type="button" class="btn btn-secondary cerrar" data-dismiss="modal"><a href="productos.html" class="cerrar">Cerrar</a></button>
+          </div>
+      </div>
+    </div>
+  `
+    );
+  
+
+
+
+  
+  
+  
+  $(".cerrar").click(() => {
+  
+  
+    $(".cartelCompra").removeClass("d-none");
+  
+  
+  
+    $(".itemCartTotal").empty(
+      ``
+  );
+  
+    $(".modal-content").empty(
+      ``
+  );
+  
+    $(".tbody").empty(
+      ``
+  );
+    $("#modal").fadeOut(1000);
+  
+  }
+  
+  );
+  }});
 
   
 
 
 
-// Agrego un cartel luego de efectuar la compra 
 
-
-$(".cartelCompra").click((event) => {
-
-  localStorage.setItem("compra", JSON.stringify(carrito));
-
-
-
-  $(".cartelCompra").addClass("d-none");
-
-  if(document.querySelector(".tbody").textContent == "") {
-
-  } else {
-
-  const elementoTitulo = $(event.target).parent().children()[0];
-  const elementoDescripcion = $(event.target).parent().children()[1];
-  $(".modal-title").text(elementoTitulo.textContent);
-  $(".modal-description").text(elementoDescripcion.textContent);
-  $("#modal").fadeIn(2000);
-
-  $("#modal").append(
-    `
-    <div class="modal-dialog" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title">¡Gracias por tu compra!</h5>
-            <button type="button" class="close cerrar" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <p class="modal-description">Tu pago y metodo de envio será confirmado por mail.</p>
-        </div>
-        <div class="modal-footer">
-
-        <button type="button" class="btn btn-primary" id="verDetalleCompra" 
-        
-        
-        
-
-
-      data-bs-toggle="pill"
-      data-bs-target="#pills-home"
-
-      role="tab"
-      aria-controls="pills-home"
-      aria-selected="true"
-      
-      
-      
-      >
-        Ver Detalle de Compra
-</button>
-            <button type="button" class="btn btn-secondary cerrar" data-dismiss="modal"><a href="productos.html" class="cerrar">Cerrar</a></button>
-        </div>
-    </div>
-  </div>
-`
-  );
-
-  $(".agregarSeccionCompra").append(
-
-    `
-    <li class="nav-item text-primary" role="presentation">
-    <a
-      class="nav-link sectionDetalle"
-      id="pills-home-tab"
-      data-bs-toggle="pill"
-      data-bs-target="#pills-home"
-      type="button"
-      role="tab"
-      aria-controls="pills-home"
-      aria-selected="true"
-      >Detalle de Compra</a
-    >
-  </li>
-`
-
-  );
-
-
-
-$(".cerrar").click(() => {
-
-
-  $(".cartelCompra").removeClass("d-none");
-
-
-
-  $(".itemCartTotal").empty(
-    ``
-);
-
-  $(".modal-content").empty(
-    ``
-);
-
-  $(".tbody").empty(
-    ``
-);
-  $("#modal").fadeOut(1000);
-
-}
-
-);
-}});
 
 
 
@@ -700,6 +669,11 @@ $("#detComp").empty(
 );
 
 
+$(".verDetalleCompra").attr({
+  'class':"btn btn-primary verDetalleCompra visible",
+});
+
+
 
 for (const guitarraComprada of storage) {
 $("#detComp").append(`
@@ -709,10 +683,9 @@ $("#detComp").append(`
   <div class="card-body">
     <h5 class="card-title">${guitarraComprada.modelo}</h5>
     <p class="card-text">${guitarraComprada.title}</p>
-    <p class="card-text">${guitarraComprada.cantidad}</p>
+    <p class="card-text">Cantidad: ${guitarraComprada.cantidad}</p>
     <p class="card-text">${guitarraComprada.precio}</p>
 
-    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 
@@ -734,8 +707,14 @@ function verTotalEnDetalleDeCompra() {
   
   $("#totalDetCompra").append(`
   
-  <p>${totalCompra}</p>
-  
+  <div class="card m-4 p-4">
+  <h5 class="card-title">Vendedor: GUITAR CENTER</h5>
+  <h6 class="card-title">Cliente: UsuarioUno</h5>
+  <h6 class="card-title">Codigo de compra: #0000001</h5>
+  <h6 class="card-title"> ${totalCompra}</h6>
+  <h6 class="card-text">Metodo de pago: Mercadopago</h6>
+  <h6 class="card-text">Envio: a confirmar por mail</h6>
+  </div>
   
   `)
   }
@@ -748,32 +727,41 @@ $(".cartelCompra").click(() => {
 
   verDetalleDeCompra();
   verTotalEnDetalleDeCompra();
-  
+
   });
 
 
 
 
 
-  
-
-function activarODesactivarSecciones() {
-  
-  $("sectionCarrito").removeClass(".active");
-  $("sectionDetalle").addClass(".active");
-
-}
+  $(".verDetalleCompra").click(() => { 
 
 
+console.log("JAJAJJA");
 
 
+$(".sectionCarrito").attr({  
+  'aria-selected':"false",
+  'class':"nav-link sectionCarrito"
+});
 
-$("#verDetalleCompra").click(() => { 
+$(".sectionDetalle").attr({  
+  'aria-selected':"true",
+  'class':"nav-link sectionDetalle active"
+});
+
+$(".carrito").attr({
+  'class':"tab-pane fade carrito",
+});
+
+$(".detalle").attr({
+  'class':"tab-pane fade detalle active show",
+});
 
 
-  activarODesactivarSecciones();
-    
-}); 
+      
+  }); 
+
 
 
 

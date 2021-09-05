@@ -60,7 +60,7 @@
             ><i class="fas fa-guitar"></i>Guitarras</a
           >
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item lalala" role="presentation">
 
           <a
             class="nav-link sectionCarrito"
@@ -74,6 +74,19 @@
             >          <i class="fas fa-shopping-cart"></i>Carrito</a
           >
 
+        </li>
+        <li class="nav-item text-primary" role="presentation">
+          <a
+            class="nav-link sectionDetalle invisible"
+            id="pills-home-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-home"
+            type="button"
+            role="tab"
+            aria-controls="pills-home"
+            aria-selected="true"
+            >Detalle de Compra</a
+          >
         </li>
 
 
@@ -158,6 +171,11 @@
 
           <h3 class="itemCartTotal text-white">Total: 0</h3>
 
+          <div>
+
+            <button type="button" class="btn btn-primary verDetalleCompra invisible">Ver Detalle de Compra</button>
+          </div>
+
         </div>
         <div class="col d-flex justify-content-end">
           <button class="btn btn-success cartelCompra">COMPRAR</button>
@@ -170,7 +188,7 @@
       </div>
 
       <div
-        class="tab-pane fade "
+        class="tab-pane fade detalle"
         id="pills-home"
         role="tabpanel"
         aria-labelledby="pills-home-tab"
@@ -178,7 +196,7 @@
 <div id="totalDetCompra">
 
 </div>
-      <div id="detComp">
+      <div id="detComp" class="d-flex flex-wrap justify-content-center">
 
 
       </div>
