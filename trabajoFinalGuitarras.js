@@ -577,10 +577,20 @@ function addLocalStorage(){
 
   // Agrego un cartel luego de efectuar la compra 
 
+  let compra = [];
 
   $(".cartelCompra").click((event) => {
 
+
     localStorage.setItem("compra", JSON.stringify(carrito));
+
+const compraStorage = JSON.parse(localStorage.getItem("compra"));
+compra = compraStorage
+
+
+
+
+
   
   
   
@@ -693,7 +703,7 @@ $(".verDetalleCompra").attr({
 
 
 
-for (const guitarraComprada of carrito) {
+for (const guitarraComprada of compra) {
 $("#detComp").append(`
 
 <div class="card" style="width: 18rem;">
