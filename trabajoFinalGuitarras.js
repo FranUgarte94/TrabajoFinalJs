@@ -468,6 +468,13 @@ function guardarItemsParaCarrito(e){
 // Funcion para indentificar y modificar la cantidad de unidades de un solo item
 function agregarItemACarrito(nuevoItem){
 
+  const alert = document.querySelector('.alert')
+
+  setTimeout( function(){
+    alert.classList.add('hide')
+  }, 2000)
+    alert.classList.remove('hide')
+
   const InputElemnto = tbody.getElementsByClassName("input__elemento");
   for(let i =0; i < carrito.length ; i++){
     if((carrito[i].modelo.trim() === nuevoItem.modelo.trim()) && (carrito[i].title.trim() === nuevoItem.title.trim())){
@@ -545,6 +552,13 @@ function quitarItemDeCarrito(e){
 
     }
   }
+
+  const alert = document.querySelector('.remove')
+
+  setTimeout( function(){
+    alert.classList.add('remove')
+  }, 1000)
+    alert.classList.remove('remove')
 
   tr.remove();
   CarritoTotal();
