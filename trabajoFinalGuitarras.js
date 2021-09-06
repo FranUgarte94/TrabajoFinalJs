@@ -327,7 +327,7 @@ function verTodasLasGuitarras() {
  
     
   `<div class="col d-flex justify-content-center mb-4">
-  <div class="card ocultable product-item" style="width: 18rem;" category="${guitarra.marca.toLowerCase()}">
+  <div class="card text-white bg-dark ocultable product-item" style="width: 18rem;" category="${guitarra.marca.toLowerCase()}">
   <img src="${guitarra.image}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title marca">Marca: ${guitarra.marca}</h5>
@@ -713,7 +713,7 @@ $(".verDetalleCompra").attr({
 for (const guitarraComprada of compra) {
 $("#detComp").append(`
 
-<div class="card" style="width: 18rem;">
+<div class="card text-white bg-dark" style="width: 18rem;">
   <img src="${guitarraComprada.img}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">${guitarraComprada.modelo}</h5>
@@ -743,7 +743,7 @@ function verTotalEnDetalleDeCompra() {
   
   $("#totalDetCompra").append(`
   
-  <div class="card m-4 p-4">
+  <div class="card text-white bg-dark m-4 p-4">
   <h5 class="card-title">Vendedor: GUITAR CENTER</h5>
   <h6 class="card-title">Cliente: UsuarioUno</h5>
   <h6 class="card-title">Codigo de compra: #0000001</h5>
