@@ -312,8 +312,6 @@ if(guitarrasStorage == null) {
 
 
 
-
-
 // Ver todas las guitarras
 
 function verTodasLasGuitarras() {
@@ -347,6 +345,9 @@ function verTodasLasGuitarras() {
   );
 }
 }
+
+
+
 
 // Ejecuto funcion para visualizar todas las guitarras apenas entro a la pagina
 verTodasLasGuitarras();
@@ -523,6 +524,7 @@ function verItemsEnCarrito(){
   CarritoTotal();
 }
 
+
 // Funcion para sumar el total de los productos en un solo monto final
 function CarritoTotal(){
   let Total = 0;
@@ -595,10 +597,6 @@ if(storage){
 function addLocalStorage(){
   localStorage.setItem("carrito", JSON.stringify(carrito));
 };
-
-
-
-
 
 
 
@@ -706,9 +704,6 @@ compra = compraStorage
 
 
 
-
-
-
 // LLeno la seccion de detalle de compra con la compra realizada
 
 function verDetalleDeCompra() {
@@ -742,6 +737,8 @@ $("#detComp").append(`
 `)
 }
 }
+
+
 
 // Ver total e informacion de la compra en el Detalle de compra
 function verTotalEnDetalleDeCompra() {
@@ -781,11 +778,4 @@ $(".cartelCompra").click(() => {
 
 
 
-
-
-
-
-
-
-
-
+// FIN! 
