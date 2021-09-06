@@ -431,6 +431,19 @@ botonAgregarACarrito.forEach(btn => {
 })
 
 
+
+$(".botonAgregarACarrito").click(
+
+  function verBotonComprar(){
+
+      $(".cartelCompra").attr({
+        'class':"btn btn-success cartelCompra visible"
+
+      });
+
+
+    });
+
 // Identifico informacion que me quiero llevar al carrito y lo guardo en un array
 function guardarItemsParaCarrito(e){
   const button = e.target;
@@ -587,10 +600,6 @@ function addLocalStorage(){
 const compraStorage = JSON.parse(localStorage.getItem("compra"));
 compra = compraStorage
 
-
-
-
-
   
   
   
@@ -612,9 +621,7 @@ compra = compraStorage
       <div class="modal-content">
           <div class="modal-header">
               <h5 class="modal-title">¡Gracias por tu compra!</h5>
-              <button type="button" class="close cerrar" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
+
           </div>
           <div class="modal-body">
               <p class="modal-description">Tu pago y metodo de envio será confirmado por mail.</p>

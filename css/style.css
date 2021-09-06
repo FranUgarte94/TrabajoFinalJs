@@ -284,3 +284,8 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.textoInicio {
+  color: whitesmoke;
+  
+}
